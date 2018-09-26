@@ -1,0 +1,84 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0px;
+}
+
+header {
+  background-color: #404041;
+  text-align: center;
+  margin: 0px 0px 30px 0px;
+}
+
+h1 {
+  margin: 0px;
+  padding: 13px 0px 13px 0px;
+  color: #ED458B;
+  font-weight: 700;
+}
+
+input[type=text] {
+  color: #D0D2D3;
+  font-size: 18px;
+  font-weight: 300;
+  height: 30px;
+  width: 300px;
+  margin-bottom: 30px;
+  border: 1px solid #D0D2D3;
+}
+
+.guess-main {
+  text-align: center;
+}
+
+.form-buttons {
+  margin-bottom: 40px;
+}
+
+.button {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 300;
+  background-color: #D0D2D3;
+  width: 142px;
+  height: 30px;
+  border: 0px;
+  border-radius: 50px;
+}
+
+.button:hover {
+  background-color: #EB008B;
+  cursor: pointer;
+}
+
+#header-text-right {
+  color: #E6E7E8;
+  font-weight: 300;
+}
+
+#submit-button {
+  margin-right: 20px;
+}
+
+#your-last-guess-was {
+  color: #404041;
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 40px;
+}
+
+#last-guess-number {
+  color: #EB008B;
+  font-size: 150px;
+  margin: 0px;
+}
+
+#guess-response {
+  color: #404041;
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+
+#reset-button {
+  width: 300px;
+}

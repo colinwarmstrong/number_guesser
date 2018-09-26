@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Number Guesser</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="master.css">
+  </head>
+  <body>
+    <header>
+      <h1>Number <span id="header-text-right">Guesser</span></h1>
+    </header>
+
+    <section class="guess-main">
+      <form action="index.html" method="post">
+        <input type="text" name="number" placeholder="Enter your guess">
+        <div class="form-button">
+          <input type="submit" name="submit" value="Guess" class="button" id="submit-button">
+          <input type="reset" name="clear" value="Clear" class="button">
+        </div>
+      </form>
+
+      <section>
+        <div id="your-last-guess-was">Your last guess was</div>
+        <div id="last-guess-number">25</div>
+        <div id="guess-response">That is too high</div>
+      </section>
+
+      <button type="reset" name="reset" class="button" id="reset-button">Reset</button>
+    </section>
+  </body>
+</html>
