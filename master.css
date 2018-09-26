@@ -16,15 +16,6 @@ h1 {
   font-weight: 700;
 }
 
-input[type=number] {
-  font-size: 18px;
-  font-weight: 300;
-  height: 30px;
-  width: 300px;
-  margin-bottom: 30px;
-  border: 1px solid #D0D2D3;
-}
-
 .guess-main {
   text-align: center;
 }
@@ -52,6 +43,15 @@ input[type=number] {
 .button:disabled {
   background-color: #D0D2D3;
   cursor: not-allowed;
+}
+
+#guess-field {
+  font-size: 16px;
+  font-weight: 300;
+  height: 30px;
+  width: 300px;
+  margin-bottom: 30px;
+  border: 1px solid #D0D2D3;
 }
 
 #header-text-right {
@@ -90,4 +90,25 @@ input[type=number] {
 #reset-button {
   margin-top: 30px;
   width: 312px;
+}
+
+#range-button {
+  margin: 30px 0px 30px 0px;
+  width: 312px;
+}
+
+#upper-range-field {
+  font-size: 14px;
+  font-weight: 300;
+  height: 30px;
+  width: 147px;
+  border: 1px solid #D0D2D3;
+}
+
+#lower-range-field {
+  font-size: 14px;
+  font-weight: 300;
+  height: 30px;
+  width: 147px;
+  border: 1px solid #D0D2D3;
 }

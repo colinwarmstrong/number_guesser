@@ -12,7 +12,15 @@
     </header>
 
     <section class="guess-main">
-      <input type="number" name="number" min="1" max="100" placeholder="Enter your guess" autocomplete="off" id="number-field" required>
+      <section id="custom-range">
+        <div>
+          <input type="number" name="" value="" placeholder="Lower Range" id="lower-range-field">
+          <input type="number" name="" value="" placeholder="Upper Range" id="upper-range-field">
+        </div>
+          <button type="submit" name="Create Range" class="button" id="range-button" disabled>Set Range</button>
+      </section>
+
+      <input type="number" name="number" min="1" max="100" placeholder="Enter a guess between 1 and 100" autocomplete="off" id="guess-field" required>
       <div class="form-button">
         <input type="button" value="Guess" name="submit" class="button" id="guess-button" disabled>
         <input type="reset" name="clear" value="Clear" class="button" id="clear-button" disabled>
@@ -26,6 +34,6 @@
 
       <button type="reset" name="reset" class="button" id="reset-button" disabled>Reset</button>
     </section>
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
 </html>
