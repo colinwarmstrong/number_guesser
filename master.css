@@ -1,6 +1,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0px;
+  text-align: center;
 }
 
 header {
@@ -14,10 +15,6 @@ h1 {
   padding: 13px 0px 13px 0px;
   color: #ED458B;
   font-weight: 700;
-}
-
-.guess-main {
-  text-align: center;
 }
 
 .form-buttons {
