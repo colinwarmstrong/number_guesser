@@ -70,37 +70,15 @@ function setMinMax() {
   guessField.placeholder = `Enter a guess between ${lowerRange} and ${upperRange}`;
 }
 
-guessButton.addEventListener('click', function() {
-  var guess = guessField.value;
-  var userGuess = parseInt(guess);
-  submitGuess(userGuess);
-  guessField.focus();
-  clearButton.disabled = true;
-  guessButton.disabled = true;
-})
-
-resetButton.addEventListener('click', function() {
-  resetGame();
-})
-
-clearButton.addEventListener('click', function() {
-  guessField.value = '';
-  clearButton.disabled = true;
-  guessButton.disabled = true;
-  guessField.focus();
-})
-
-guessField.addEventListener('input', function () {
-  if (guessField.value === "") {
-    clearButton.disabled = true;
-    guessButton.disabled = true;
+function setRangeButtonEnable() {
+  if (lowerRangeField.value === '' || upperRangeField.value === '') {
+    setRangeButton.disabled = true;
   } else {
-    clearButton.disabled = false;
-    guessButton.disabled = false;
+    setRangeButton.disabled = false;
   }
-})
+}
 
-setRangeButton.addEventListener('click', function() {
+function changeRange() {
   lowerRange = parseInt(lowerRangeField.value);
   upperRange = parseInt(upperRangeField.value);
   randomNumber = generateRandomNumber();
@@ -109,20 +87,44 @@ setRangeButton.addEventListener('click', function() {
   upperRangeField.value = '';
   setMinMax();
   resetGame();
-})
+}
 
-lowerRangeField.addEventListener('input', function() {
-  if (lowerRangeField.value === '' || upperRangeField.value === '') {
-    setRangeButton.disabled = true;
+function guessButtonEnable() {
+  if (guessField.value === "") {
+    clearButton.disabled = true;
+    guessButton.disabled = true;
   } else {
-    setRangeButton.disabled = false;
+    clearButton.disabled = false;
+    guessButton.disabled = false;
   }
-})
+}
 
-upperRangeField.addEventListener('input', function() {
-  if (lowerRangeField.value === '' || upperRangeField.value === '') {
-    setRangeButton.disabled = true;
-  } else {
-    setRangeButton.disabled = false;
-  }
-})
+function clearButtonDisable() {
+  guessField.value = '';
+  clearButton.disabled = true;
+  guessButton.disabled = true;
+  guessField.focus();
+}
+
+function guessSubmission() {
+  var guess = guessField.value;
+  var userGuess = parseInt(guess);
+  submitGuess(userGuess);
+  guessField.focus();
+  clearButton.disabled = true;
+  guessButton.disabled = true;
+}
+
+guessButton.addEventListener('click', guessSubmission());
+
+resetButton.addEventListener('click', resetGame());
+
+clearButton.addEventListener('click', clearButtonDisable());
+
+guessField.addEventListener('input', guessButtonEnable());
+
+setRangeButton.addEventListener('click', changeRange());
+
+lowerRangeField.addEventListener('input', setRangeButtonEnable());
+
+upperRangeField.addEventListener('input', setRangeButtonEnable());
