@@ -14,6 +14,10 @@ var displayMessage  = document.getElementById('guess-response');
 
 var randomNumber = generateRandomNumber();
 
+console.log(lowerRange)
+console.log(upperRange)
+console.log(randomNumber)
+
 lowerRangeField.placeholder = `Set Minimum (${lowerRange})`;
 upperRangeField.placeholder = `Set Maximum (${upperRange})`;
 
@@ -56,10 +60,8 @@ function resetGame() {
   guessField.value = '';
   infoSection.style.display = 'none';
   resetButton.disabled = true;
-  clearButton.disabled = true;
-  guessButton.disabled = true;
   randomNumber = generateRandomNumber();
-  guessField.focus();
+  disableButtons();
 }
 
 function setMinMax() {
@@ -91,40 +93,39 @@ function changeRange() {
 
 function guessButtonEnable() {
   if (guessField.value === "") {
-    clearButton.disabled = true;
-    guessButton.disabled = true;
+    disableButtons();
   } else {
-    clearButton.disabled = false;
-    guessButton.disabled = false;
+    enableButtons();
   }
 }
 
 function clearButtonDisable() {
   guessField.value = '';
-  clearButton.disabled = true;
-  guessButton.disabled = true;
-  guessField.focus();
+  disableButtons();
 }
 
 function guessSubmission() {
   var guess = guessField.value;
   var userGuess = parseInt(guess);
   submitGuess(userGuess);
-  guessField.focus();
-  clearButton.disabled = true;
-  guessButton.disabled = true;
+  disableButtons();
 }
 
-guessButton.addEventListener('click', guessSubmission());
+function enableButtons() {
+  guessButton.disabled = false;
+  clearButton.disabled = false;
+  guessField.focus();
+}
+function disableButtons() {
+  guessButton.disabled = true;
+  clearButton.disabled = true;
+  guessField.focus();
+}
 
-resetButton.addEventListener('click', resetGame());
-
-clearButton.addEventListener('click', clearButtonDisable());
-
-guessField.addEventListener('input', guessButtonEnable());
-
-setRangeButton.addEventListener('click', changeRange());
-
-lowerRangeField.addEventListener('input', setRangeButtonEnable());
-
-upperRangeField.addEventListener('input', setRangeButtonEnable());
+guessButton.addEventListener('click', guessSubmission);
+resetButton.addEventListener('click', resetGame);
+clearButton.addEventListener('click', clearButtonDisable);
+guessField.addEventListener('input', guessButtonEnable);
+setRangeButton.addEventListener('click', changeRange);
+lowerRangeField.addEventListener('input', setRangeButtonEnable);
+upperRangeField.addEventListener('input', setRangeButtonEnable);
